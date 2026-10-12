@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stock Market Analysis App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js for stock chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- App JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Stock Market Analysis</h1>
+    </header>
+
+    <main>
+        <p id="error-message" role="alert"></p>
+
+        <div class="container">
+
+            <!-- Left: Chart and Details -->
+            <div class="main-content">
+
+                <!-- Stock Chart -->
+                <section class="chart-section">
+                    <h2 id="chart-title">Stock Chart — AAPL</h2>
+
+                    <div class="time-range-buttons">
+                        <button
+                            type="button"
+                            class="active"
+                            data-range="1month"
+                            onclick="changeRange('1month')">
+                            1 Month
+                        </button>
+
+                        <button
+                            type="button"
+                            data-range="3month"
+                            onclick="changeRange('3month')">
+                            3 Months
+                        </button>
+
+                        <button
+                            type="button"
+                            data-range="1year"
+                            onclick="changeRange('1year')">
+                            1 Year
+                        </button>
+
+                        <button
+                            type="button"
+                            data-range="5year"
+                            onclick="changeRange('5year')">
+                            5 Years
+                        </button>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="stock-chart"></canvas>
+                    </div>
+
+                    <!-- Peak and Low -->
+                    <div class="price-summary">
+                        <div class="detail-card">
+                            <p>Peak Price</p>
+                            <h3 id="peak-price">--</h3>
+                        </div>
+
+                        <div class="detail-card">
+                            <p>Lowest Price</p>
+                            <h3 id="low-price">--</h3>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Stock Details -->
+                <section class="details-section">
+                    <h2>Stock Details</h2>
+
+                    <div id="stock-details">
+                        <p>Select a stock to view its details.</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right: Stock List -->
+            <aside class="stock-section">
+                <h2>Stocks</h2>
+
+                <div id="stock-list">
+                    <p>Loading stocks...</p>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Stock Market Analysis App</p>
+    </footer>
+
+</body>
+</html>
